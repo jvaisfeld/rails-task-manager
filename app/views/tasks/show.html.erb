@@ -1,3 +1,11 @@
-<h1><%= @task.name %></h1>
-
-<%= link_to "see all tasks", tasks_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h1>Take a close look at this task (which you haven't completed yet)</h1>
+      <ul>
+      <li><h2><%= @task.name %></h2></li>
+      <%= link_to "see all tasks", tasks_path %>
+      </ul>
+    </div>
+  </div>
+</div>

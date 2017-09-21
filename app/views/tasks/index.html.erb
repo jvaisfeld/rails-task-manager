@@ -1,12 +1,30 @@
-<h1>All tasks:</h1>
-<% @tasks.each do |task| %>
-<p><%= task.name %></p>
-<%= link_to "see details", task_path(task) %>
-<%= link_to "edit task", edit_task_path(task) %>
-<%= link_to "delete task", task_path(task), method: :delete %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h1>Here are your tasks:</h1>
+      <ul>
+         <% @tasks.each do |task| %>
+        <li><h3><%= task.name %></h3> (<%= link_to "details", task_path(task) %>,
+        <%= link_to "edit", edit_task_path(task) %>,
+        <%= link_to "delete", task_path(task), method: :delete %>)</li>
 
-<h2>wanna add a new task?</h2>
-<%= link_to "create new task", new_task_path %>
+        <% end %>
+      </ul>
+
+
+<h2>List not long enough?</h2>
+<h2 class="text-left">
+  <%= link_to "create a new task", new_task_path %>
+</h2>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 
 
